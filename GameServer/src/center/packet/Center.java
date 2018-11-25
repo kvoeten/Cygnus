@@ -19,16 +19,12 @@ package center.packet;
 import center.CenterSocket;
 import client.ClientSessionManager;
 import client.ClientSocket;
-import client.packet.ClientPacket;
 import crypto.TripleDESCipher;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-import net.InPacket;
+
+import net.packet.InPacket;
 import net.OutPacket;
 
 /**
- *
  * @author Kaz Voeten
  */
 public class Center {
@@ -52,16 +48,16 @@ public class Center {
 
     public static void OnMigrationResult(CenterSocket pSocket, InPacket iPacket) {
         long nSessionID = iPacket.DecodeLong();
-        
+
         ClientSocket pClient = ClientSessionManager.GetSessionByID(nSessionID);
-        
+
         if (!iPacket.DecodeBool()) {
             pClient.Close();
             return;
         }
-        
+
         pClient.EncInit(); //Switch Crypto mode
-        
+
         //TODO: Handling...
     }
 }

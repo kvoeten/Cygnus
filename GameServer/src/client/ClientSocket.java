@@ -22,17 +22,18 @@ import client.packet.LoopBackPacket;
 import crypto.TripleDESCipher;
 import io.netty.channel.Channel;
 import io.netty.util.concurrent.ScheduledFuture;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import net.InPacket;
+
+import net.packet.InPacket;
 import net.OutPacket;
 
 import net.Socket;
 import util.HexUtils;
 
 /**
- *
  * @author Kaz Voeten
  */
 public class ClientSocket extends Socket {
@@ -56,7 +57,7 @@ public class ClientSocket extends Socket {
                 nPacketID = mEncryptedPacketID.get(nPacketID);
             }
         }
-        
+
         switch (nPacketID) {
             case ClientPacket.AliveAck:
             case ClientPacket.ResponseToCheckAliveAck:
@@ -85,7 +86,7 @@ public class ClientSocket extends Socket {
         String sBuffer = "";
         byte[] aKey = TripleDESCipher.GenKey("", aMachineID); //pCharacterData.pAvatar.pCharacterStat.sCharacterName
         pCipher = new TripleDESCipher(aKey);
-        
+
         List<Integer> aUtilizedRandom = new ArrayList<>();
         for (int i = ClientPacket.BeginUser; i < ClientPacket.COUNT; i++) {
             int nRandom = ThreadLocalRandom.current().nextInt(ClientPacket.BeginUser, 9999);

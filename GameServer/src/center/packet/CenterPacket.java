@@ -17,7 +17,6 @@
 package center.packet;
 
 /**
- *
  * @author Kaz Voeten
  */
 public class CenterPacket {

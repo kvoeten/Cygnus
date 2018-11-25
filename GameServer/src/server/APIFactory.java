@@ -21,6 +21,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -28,12 +29,13 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import org.json.JSONObject;
+
 import java.util.Date;
 import java.util.HashMap;
+
 import org.json.JSONArray;
 
 /**
- *
  * @author Kaz Voeten
  */
 public class APIFactory extends Thread {
@@ -114,8 +116,8 @@ public class APIFactory extends Thread {
                         }
                     });
 
-                    System.out.println("[Info] Updated blocklist. Now contains " 
-                            + (mIPBan.size() + mHWIDBan.size() + mMACBan.size()) 
+                    System.out.println("[Info] Updated blocklist. Now contains "
+                            + (mIPBan.size() + mHWIDBan.size() + mMACBan.size())
                             + " rules.");
                 } catch (Exception ex) {
                     Logger.getLogger(APIFactory.class.getName()).log(Level.SEVERE, null, ex);

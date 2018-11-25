@@ -30,7 +30,6 @@ import net.PacketDecoder;
 import net.PacketEncoder;
 
 /**
- *
  * @author Kaz Voeten
  */
 public class Client extends Thread {

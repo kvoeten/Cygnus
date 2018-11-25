@@ -17,7 +17,6 @@
 package client.packet;
 
 /**
- *
  * @author Kaz Voeten
  */
 public class ClientPacket {
@@ -76,10 +75,10 @@ public class ClientPacket {
             MapLogin = 183, // Version 188
             EndSocket = 184,// Version 188
 
-            /**
-             * Game - Received Operation Codes
-             */
-            BeginUser = 183,// Version 188
+    /**
+     * Game - Received Operation Codes
+     */
+    BeginUser = 183,// Version 188
             UserTransferFieldRequest = 184,// Version 188
             UserTransferChannelRequest = 185,// Version 188
             UserTransferToHubRequest = 186,// Version 188
@@ -254,8 +253,8 @@ public class ClientPacket {
             UserDebuffObjCollision = 371,// Version 188
             UserUpdateLapidification = 372,// Version 188
 
-            // Unsure when this +5 starts...
-            UserRequestCharacterPotentialSkillRandSet = 377,// Version 188
+    // Unsure when this +5 starts...
+    UserRequestCharacterPotentialSkillRandSet = 377,// Version 188
             UserRequestCharacterPotentialSkillRandSetUI = 378,// Version 188
             UserRequestOccumpationData = 379,// Version 188
             UserRequestAswanTimeTableClientInit = 380,// Version 188
@@ -350,7 +349,7 @@ public class ClientPacket {
             UserEquipSlotLevelMinusItemUseRequest = 476,// Version 188
             BoardGameRequest = 477,// Version 188
 
-            UserRequestFlyingSwordStart = 480,// Version 188
+    UserRequestFlyingSwordStart = 480,// Version 188
             BingoRequest = 481,// Version 188
             BingoCassandraRequest = 482,// Version 188
             ActionBarRequest = 483,// Version 188
@@ -358,13 +357,13 @@ public class ClientPacket {
             MesoRangerRequest = 485,// Version 188
             UserRequestSetSmashCount = 486,// Version 188
 
-            UserHyperSkillUpRequest = 487,// Version 188
+    UserHyperSkillUpRequest = 487,// Version 188
             UserHyperSkillResetRequest = 488,// Version 188
             UserHyperStatSkillUpRequest = 489,// Version 188
             UserHyperStatSkillResetRequest = 490,// Version 188
 
-            // somewhere might be off by 1 before waitqueue
-            UserSetDressChangedRequest = 491,// Version 188
+    // somewhere might be off by 1 before waitqueue
+    UserSetDressChangedRequest = 491,// Version 188
             EntryRecordRequest = 492,// Version 188
             SetMaxGauge = 493,// Version 188
             UserReturnEffectResponse = 494,// Version 188
@@ -377,13 +376,13 @@ public class ClientPacket {
             MysticFieldMove = 501,// Version 188
             YutGameRequest = 502,// Version 188
             UserJewelCraftRequest = 503,// Version 188
-            //ValuePackRequest = 504,// Version 188
+    //ValuePackRequest = 504,// Version 188
 
-            WaitQueueRequest = 504,// Version 188
+    WaitQueueRequest = 504,// Version 188
             RequestReloginCookie = 505,// Version 188
 
-            // might be off by 1
-            CheckTrickOrTreatRequest = 507,// Version 188
+    // might be off by 1
+    CheckTrickOrTreatRequest = 507,// Version 188
             MonsterFarmMigrateOutRequest = 508,// Version 188
             HalloweenCandyRankingRequest = 509,// Version 188
             GetRewardRequest = 510,// Version 188 
@@ -411,8 +410,8 @@ public class ClientPacket {
             UserCompletePersonalShopBuyCheck = 532,// Version 188
             UserDailyCommitmentCheck = 533,// Version 188
 
-            // todo fix
-            UserMobDropMesoPickup = 54,// Version 188
+    // todo fix
+    UserMobDropMesoPickup = 54,// Version 188
             UserBreakTimeFieldEnter = 521,// Version 188
             UserRunActQuest = 522,// Version 188
             JournalAvatarRequest = 523,// Version 188
@@ -427,11 +426,11 @@ public class ClientPacket {
             UnUrusSelectedSkillList = 523,// Version 188
             SoulDungeonSys = 524,// Version 188
 
-            UserSoulEffectRequest = 551,
+    UserSoulEffectRequest = 551,
             UserSpinOffNewModifyRequest = 552,
             BlackList = 553,
-            // unsure
-            UserUpdateMatrix = 570,
+    // unsure
+    UserUpdateMatrix = 570,
             EndOverHeat = 571,
             TradeKingShopReq = 572,
             TradeKingShopInfoReq = 573,
@@ -555,21 +554,21 @@ public class ClientPacket {
             UserRegisterFamiliarNameRequest = 812,// Version 188
             GuildBBS = 819,// Version 188
 
-            KaiserSkillShortcut = 832, // lmao dawg I'm assuming this goes somewhere here, but gotta confirm :P
+    KaiserSkillShortcut = 832, // lmao dawg I'm assuming this goes somewhere here, but gotta confirm :P
 
-            SalonRequest = 853,// Version 188
+    SalonRequest = 853,// Version 188
             SetDamageSkinRequest = 855,// Version 188
             RemoveDamageSkinRequest = 856,// Version 188
 
-            // Unsure
-            BeginFamiliar = 866,
+    // Unsure
+    BeginFamiliar = 866,
             FamiliarMove = 867,// Version 188
             FamiliarActionRequest = 868,// Version 188
             FamiliarAttackRequest = 869,// Version 188
             FamiliarAutoBuffRequest = 870,// Version 188
             EndFamiliar = 871,// Version 188
 
-            EndUser = 892,// Version 188
+    EndUser = 892,// Version 188
             BeginField = 893,// Version 188
             BeginLifePool = 894,// Version 188
             BeginMob = 895,// Version 188
@@ -612,7 +611,7 @@ public class ClientPacket {
             ReactorOnKey = 933,// Version 188
             EndReactorPool = 934,// Version 188
 
-            BeginPartyMatch = 669, // Version 188  = Was 961
+    BeginPartyMatch = 669, // Version 188  = Was 961
             InvitePartyMatch = 962,
             CancelInvitePartyMatch = 963,
             PartyMemberCandidateRequest = 964,
@@ -630,7 +629,7 @@ public class ClientPacket {
             RuneStoneSkillReq = 976,
             EndField = 1088,// Version 187
 
-            BeginCashShop = 1146,// Version 188
+    BeginCashShop = 1146,// Version 188
             CS_UPDATE = 1147,// Version 188
             BUY_CS_ITEM = 1148,// Version 188
             CashShopCheckCouponRequest = 1149,// Version 188
@@ -639,7 +638,7 @@ public class ClientPacket {
             CASH_UNKNOWN = 1161,// Version 188
             EndCashShop = 1163,// Version 188
 
-            BeginItemUpgrade = 1177,// Version 188
+    BeginItemUpgrade = 1177,// Version 188
             GoldHammerRequest = 1178,// Version 188
             GoldHammerComplete = 1179,// Version 188
             EndItemUpgrade = 1180,// Version 188

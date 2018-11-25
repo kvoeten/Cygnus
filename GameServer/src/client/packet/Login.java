@@ -19,12 +19,11 @@ package client.packet;
 import center.CenterSessionManager;
 import center.packet.Center;
 import client.ClientSocket;
-import net.InPacket;
+import net.packet.InPacket;
 import net.OutPacket;
 
 
 /**
- *
  * @author Kaz Voeten
  */
 public class Login {
@@ -43,7 +42,7 @@ public class Login {
         pSocket.aMachineID = iPacket.DecodeBuffer(0x10); //MachineID
         iPacket.DecodeShort(); //CSecurityClient.usSeq
         iPacket.DecodeLong();//CSecurityClient.ulArgument
-        
+
         CenterSessionManager.pSession.SendPacket(Center.MigrationRequest(pSocket.nSessionID, pSocket.dwCharacterID, pSocket.GetIP()));
     }
 

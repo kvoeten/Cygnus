@@ -23,19 +23,20 @@ import client.packet.Login;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.InPacket;
+
+import net.packet.InPacket;
 import net.OutPacket;
 import server.APIFactory;
 
 import server.Configuration;
 
 /**
- *
  * @author Kaz Voeten
  */
 public class ClientSessionManager extends ChannelInboundHandlerAdapter {

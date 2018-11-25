@@ -27,7 +27,7 @@ import java.util.Properties;
 /**
  * Configurations regarding the Login Server. Mirrors the way Invictus
  * used to load configurations.
- * 
+ *
  * @author Zygon
  */
 public class Configuration {
@@ -59,7 +59,7 @@ public class Configuration {
     public static String URL;
     public static String USER;
     public static String PASS;
-    
+
     // [Auth API Details]
     static String AUTH_API_URL;
 

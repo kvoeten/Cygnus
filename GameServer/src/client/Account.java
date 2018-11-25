@@ -17,10 +17,10 @@
 package client;
 
 /**
- *
  * @author Kaz Voeten
  */
-import net.InPacket;
+
+import net.packet.InPacket;
 import server.APIFactory;
 
 public class Account {
@@ -31,7 +31,7 @@ public class Account {
     public final byte nState, nGender, nAdmin;
 
     private Account(int nAccountID, long nSessionID, String sAccountName, String sIP, String sPIC,
-            byte nState, byte nGender, byte nAdmin) {
+                    byte nState, byte nGender, byte nAdmin) {
         this.nAccountID = nAccountID;
         this.nSessionID = nSessionID;
         this.sAccountName = sAccountName;
@@ -58,8 +58,8 @@ public class Account {
 
     public void VerifyWhitelisted(ClientSocket pSocket) {
         if (APIFactory.mIPBan.containsKey(sIP)
-            || APIFactory.mMACBan.containsKey(sMAC)
-            || APIFactory.mHWIDBan.containsKey(sHWID)) {
+                || APIFactory.mMACBan.containsKey(sMAC)
+                || APIFactory.mHWIDBan.containsKey(sHWID)) {
             pSocket.Close();
         }
     }
