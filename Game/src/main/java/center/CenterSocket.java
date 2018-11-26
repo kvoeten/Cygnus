@@ -19,10 +19,10 @@ package center;
 import center.packet.Center;
 import center.packet.CenterPacket;
 import io.netty.channel.Channel;
+import net.SocketMode;
 import net.packet.InPacket;
 
 import net.Socket;
-import util.HexUtils;
 
 /**
  * @author Kaz Voeten
@@ -32,7 +32,7 @@ public class CenterSocket extends Socket {
     public String sWorldName;
 
     public CenterSocket(Channel channel, int uSeqSend, int uSeqRcv) {
-        super(channel, uSeqSend, uSeqRcv);
+        super(SocketMode.SERVER, channel, uSeqSend, uSeqRcv);
     }
 
     public void ProcessPacket(InPacket iPacket) {
@@ -49,7 +49,7 @@ public class CenterSocket extends Socket {
             default:
                 System.out.println("[DEBUG] Received unhandled Center packet. nPacketID: "
                         + nPacketID + ". Data: "
-                        + HexUtils.ToHex(iPacket.DecodeBuffer(iPacket.GetLength())));
+                        + iPacket.toString());
         }
     }
 }

@@ -21,7 +21,6 @@ package client;
  */
 
 import net.packet.InPacket;
-import server.APIFactory;
 
 public class Account {
 
@@ -57,10 +56,6 @@ public class Account {
     }
 
     public void VerifyWhitelisted(ClientSocket pSocket) {
-        if (APIFactory.mIPBan.containsKey(sIP)
-                || APIFactory.mMACBan.containsKey(sMAC)
-                || APIFactory.mHWIDBan.containsKey(sHWID)) {
-            pSocket.Close();
-        }
+        //TODO: HTTP API
     }
 }

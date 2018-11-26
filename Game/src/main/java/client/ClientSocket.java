@@ -27,11 +27,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import net.SocketMode;
 import net.packet.InPacket;
-import net.OutPacket;
+import net.packet.OutPacket;
 
 import net.Socket;
-import util.HexUtils;
 
 /**
  * @author Kaz Voeten
@@ -47,7 +47,7 @@ public class ClientSocket extends Socket {
     public byte[] aMachineID;
 
     public ClientSocket(Channel channel, int uSeqSend, int uSeqRcv) {
-        super(channel, uSeqSend, uSeqRcv);
+        super(SocketMode.CLIENT, channel, uSeqSend, uSeqRcv);
     }
 
     public void ProcessPacket(InPacket iPacket) {
@@ -69,7 +69,7 @@ public class ClientSocket extends Socket {
             default:
                 System.out.println("[DEBUG] Received unhandled Client packet. nPacketID: "
                         + nPacketID + ". Data: "
-                        + HexUtils.ToHex(iPacket.DecodeBuffer(iPacket.GetLength())));
+                        + iPacket.toString());
         }
     }
 

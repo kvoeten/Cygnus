@@ -24,7 +24,7 @@ import java.util.Random;
 
 import center.packet.LoopBackPacket;
 import net.packet.InPacket;
-import net.OutPacket;
+import net.packet.OutPacket;
 
 import server.Configuration;
 

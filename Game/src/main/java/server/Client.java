@@ -55,7 +55,7 @@ public class Client extends Thread {
                 }
             });
 
-            ChannelFuture f = b.connect(Configuration.CENTER_SERVER, Configuration.CENTER_SERVER_PORT);
+            ChannelFuture f = b.connect(Configuration.CENTER_SERVER_IP, Configuration.CENTER_SERVER_PORT);
             c = f.channel();
             f.sync();
             c.closeFuture().sync();
@@ -82,7 +82,6 @@ public class Client extends Thread {
     public static void main(String[] args) {
         Server.getInstance().start();
         Client.getInstance().start();
-        APIFactory.GetInstance().start();
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override

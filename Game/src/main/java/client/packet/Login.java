@@ -20,7 +20,7 @@ import center.CenterSessionManager;
 import center.packet.Center;
 import client.ClientSocket;
 import net.packet.InPacket;
-import net.OutPacket;
+import net.packet.OutPacket;
 
 
 /**

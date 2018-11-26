@@ -31,8 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.packet.InPacket;
-import net.OutPacket;
-import server.APIFactory;
+import net.packet.OutPacket;
 
 import server.Configuration;
 
@@ -72,11 +71,14 @@ public class ClientSessionManager extends ChannelInboundHandlerAdapter {
 
         ClientSocket pClient = new ClientSocket(ch, uSeqSend, uSeqRecv);
         System.out.printf("[Debug] Opened session asfdaswith %s%n", pClient.GetIP());
+
+        /* TODO: API
         if (APIFactory.mIPBan.containsKey(pClient.GetIP())) {
             System.out.printf("[Debug] Rejected session with banned IP: %s%n", pClient.GetIP());
             pClient.Close();
             return;
         }
+        */
 
         OutPacket oPacket = new OutPacket((short) 0x0F);
         oPacket.EncodeShort(Configuration.MAPLE_VERSION);

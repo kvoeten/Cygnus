@@ -19,10 +19,9 @@ package center.packet;
 import center.CenterSocket;
 import client.ClientSessionManager;
 import client.ClientSocket;
-import crypto.TripleDESCipher;
 
 import net.packet.InPacket;
-import net.OutPacket;
+import net.packet.OutPacket;
 
 /**
  * @author Kaz Voeten

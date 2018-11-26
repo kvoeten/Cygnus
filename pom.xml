@@ -16,6 +16,7 @@
         <module>Center</module>
         <module>Util</module>
         <module>Login</module>
+        <module>Game</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
