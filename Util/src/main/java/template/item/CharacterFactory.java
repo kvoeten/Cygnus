@@ -16,11 +16,11 @@
  */
 package template.item;
 
-import bin.WzBinaryReader;
-import java.io.IOException;
+import binary.WzBinaryReader;
+
 import java.nio.file.Paths;
 
-import bin.WzBinaryWriter;
+import binary.WzBinaryWriter;
 import wz.WzFile;
 import wz.WzObject;
 import wz.common.WzDataTool;
@@ -187,7 +187,7 @@ public class CharacterFactory {
 
     public void dumpBinaryEquips(String wzFolder, byte[] key) {
         try {
-            WzBinaryWriter pWriter = new WzBinaryWriter(wzFolder + "/Character.bin");
+            WzBinaryWriter pWriter = new WzBinaryWriter(wzFolder + "/Character.binary");
             WzMappedInputStream in = new WzMappedInputStream(Paths.get(wzFolder, "/Character.wz"));
             WzFile equipWZ = new WzFile("/Character.wz", (short) version);
             in.setKey(key);

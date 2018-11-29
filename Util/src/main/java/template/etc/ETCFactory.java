@@ -16,8 +16,8 @@
  */
 package template.etc;
 
-import bin.WzBinaryReader;
-import bin.WzBinaryWriter;
+import binary.WzBinaryReader;
+import binary.WzBinaryWriter;
 import java.nio.file.Paths;
 import wz.WzFile;
 import wz.WzObject;
@@ -62,7 +62,7 @@ public class ETCFactory {
 
     public void DumpBinary(String sFolder, byte[] aKey) {
         try {
-            WzBinaryWriter pOutBuff = new WzBinaryWriter(sFolder + "/Etc.bin");
+            WzBinaryWriter pOutBuff = new WzBinaryWriter(sFolder + "/Etc.binary");
             WzMappedInputStream pStream = new WzMappedInputStream(Paths.get(sFolder, "/Etc.wz"));
             WzFile pFile = new WzFile("Etc.wz", (short) version);
             pStream.setKey(aKey);

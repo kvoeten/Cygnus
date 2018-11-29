@@ -45,9 +45,9 @@ public class MapleDataFactory {
 
     public void Initialize() {
         try {
-            final File fEtc = new File(this.getClass().getClassLoader().getResource("Etc.bin").getFile());
-            final File fCharacter = new File(this.getClass().getClassLoader().getResource("Character.bin").getFile());
-            final File fItem = new File(this.getClass().getClassLoader().getResource("Item.bin").getFile());
+            final File fEtc = new File(this.getClass().getClassLoader().getResource("Etc.binary").getFile());
+            final File fCharacter = new File(this.getClass().getClassLoader().getResource("Character.binary").getFile());
+            final File fItem = new File(this.getClass().getClassLoader().getResource("Item.binary").getFile());
             Load(fEtc.getCanonicalPath(), fCharacter.getCanonicalPath(), fItem.getCanonicalPath());
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -66,20 +66,20 @@ public class MapleDataFactory {
 
     private void Load(String sETC, String sCharacter, String sItem) {
         Long time = System.currentTimeMillis();
-        System.out.println("[Info] Parsing binary Etc.bin data.");
+        System.out.println("[Info] Parsing binary Etc.binary data.");
         pETCFactory.LoadBinary(sETC);
-        System.out.println("[Info] Parsed Etc.bin data in " + (System.currentTimeMillis() - time) + "ms.");
+        System.out.println("[Info] Parsed Etc.binary data in " + (System.currentTimeMillis() - time) + "ms.");
 
         time = System.currentTimeMillis();
-        System.out.println("[Info] Parsing binary Character.bin data.");
+        System.out.println("[Info] Parsing binary Character.binary data.");
         pCharacterFactory.loadBinaryEquips(sCharacter);
         int nSize = ItemFactory.mItemData.size();
-        System.out.println("[Info] Parsed " + nSize + " Character.bin data entries in " + (System.currentTimeMillis() - time) + "ms.");
+        System.out.println("[Info] Parsed " + nSize + " Character.binary data entries in " + (System.currentTimeMillis() - time) + "ms.");
 
         time = System.currentTimeMillis();
-        System.out.println("[Info] Parsing binary Item.bin data.");
+        System.out.println("[Info] Parsing binary Item.binary data.");
         pItemFactory.loadBinaryItems(sItem);
-        System.out.println("[Info] Parsed " + (ItemFactory.mItemData.size() - nSize) + " Item.bin data entries in " + (System.currentTimeMillis() - time) + "ms.");
+        System.out.println("[Info] Parsed " + (ItemFactory.mItemData.size() - nSize) + " Item.binary data entries in " + (System.currentTimeMillis() - time) + "ms.");
     }
 
     private void Dump(String sETC, String sCharacter, String sItem) {

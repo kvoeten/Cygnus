@@ -19,8 +19,8 @@ package template.item;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-import bin.WzBinaryReader;
-import bin.WzBinaryWriter;
+import binary.WzBinaryReader;
+import binary.WzBinaryWriter;
 import wz.WzFile;
 import wz.WzObject;
 import wz.common.WzDataTool;
@@ -43,7 +43,7 @@ public class ItemFactory {
 
     public void dumpBinaryItems(String wzFolder, byte[] key) {
         try {
-            WzBinaryWriter pWriter = new WzBinaryWriter(wzFolder + "/Item.bin");
+            WzBinaryWriter pWriter = new WzBinaryWriter(wzFolder + "/Item.binary");
             WzMappedInputStream in = new WzMappedInputStream(Paths.get(wzFolder, "/Item.wz"));
             WzFile itemWZ = new WzFile("/Item.wz", (short) version);
             in.setKey(key);
@@ -57,7 +57,7 @@ public class ItemFactory {
             try {
                 pWriter.Write();
             } catch (Exception ex) {
-                System.out.println("Couldn't finalize bin file.");
+                System.out.println("Couldn't finalize binary file.");
             }
 
         } catch (Exception ex) {
