@@ -45,9 +45,9 @@ public class MapleDataFactory {
 
     public void Initialize() {
         try {
-            final File fEtc = new File(this.getClass().getClassLoader().getResource("Etc.binary").getFile());
-            final File fCharacter = new File(this.getClass().getClassLoader().getResource("Character.binary").getFile());
-            final File fItem = new File(this.getClass().getClassLoader().getResource("Item.binary").getFile());
+            final File fEtc = new File(this.getClass().getClassLoader().getResource("Etc.bin").getFile());
+            final File fCharacter = new File(this.getClass().getClassLoader().getResource("Character.bin").getFile());
+            final File fItem = new File(this.getClass().getClassLoader().getResource("Item.bin").getFile());
             Load(fEtc.getCanonicalPath(), fCharacter.getCanonicalPath(), fItem.getCanonicalPath());
         } catch (Exception ex) {
             ex.printStackTrace();
