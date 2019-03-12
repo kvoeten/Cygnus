@@ -7,11 +7,6 @@
     <version>1.0-1</version>
     <packaging>pom</packaging>
     <modules>
-        <module>AuthServer</module>
-        <module>LoginServer</module>
-        <module>CenterServer</module>
-        <module>GameServer</module>
-        <module>JWZLib</module>
         <module>Base</module>
         <module>Center</module>
         <module>Util</module>
@@ -20,7 +15,7 @@
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.11</maven.compiler.source>
-        <maven.compiler.target>1.11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 </project>

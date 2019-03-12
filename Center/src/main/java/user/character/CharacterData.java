@@ -20,9 +20,9 @@ import java.util.Date;
 
 import net.packet.OutPacket;
 import net.packet.FileTime;
-import template.item.GW_ItemSlotBase;
-import template.item.GW_ItemSlotEquip;
-import template.item.ItemSlotIndex;
+import wz.item.GW_ItemSlotBase;
+import wz.item.GW_ItemSlotEquip;
+import wz.item.ItemSlotIndex;
 
 /**
  * @author Kaz Voeten
