@@ -20,6 +20,7 @@ import crypto.TripleDESCipher;
 import io.netty.channel.Channel;
 import io.netty.util.AttributeKey;
 import net.packet.OutPacket;
+import com.artemis.Component;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,7 +29,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author Kaz Voeten
  */
-public class Socket {
+public class Socket extends Component {
 
     public static final AttributeKey<Socket> SESSION_KEY = AttributeKey.valueOf("Session");
     private final ReentrantLock Lock = new ReentrantLock(true);
