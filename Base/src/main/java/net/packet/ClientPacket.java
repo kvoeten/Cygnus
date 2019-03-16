@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package client.packet;
+package net.packet;
 
 /**
  * @author Kaz Voeten
@@ -65,7 +65,7 @@ public class ClientPacket {
             CrcErrorLog = 154,// Version 188
             PerformanceInfoProvidedConsent = 155,// Version 188
             CheckHotfix = 156,// Version 188
-            UnknownSpam = 158,// Version 188
+            ClientLoadingState  = 158,// Version 188
             ChangeCharacterLocation = 164,// Version 188
             UserLimitRequest = 167,// Version 188
             WorldInfoRequest = 171,// Version 188

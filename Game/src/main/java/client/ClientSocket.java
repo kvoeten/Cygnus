@@ -16,9 +16,9 @@
  */
 package client;
 
-import client.packet.ClientPacket;
+import net.packet.ClientPacket;
 import client.packet.Login;
-import client.packet.LoopBackPacket;
+import net.packet.LoopBackPacket;
 import crypto.TripleDESCipher;
 import io.netty.channel.Channel;
 import io.netty.util.concurrent.ScheduledFuture;

@@ -35,6 +35,7 @@ import client.avatar.AvatarData;
 import crypto.BCrypt;
 
 import java.util.Date;
+import net.packet.LoopBackPacket;
 
 /**
  * @author Kaz Voeten
@@ -47,7 +48,7 @@ public class Login {
     }
 
     public static OutPacket LastConnectedWorld(int nWorldID) {
-        OutPacket oPacket = new OutPacket(LoopBackPacket.LastConnectedWorld);
+        OutPacket oPacket = new OutPacket(LoopBackPacket.LatestConnectedWorld);
         oPacket.EncodeInt(nWorldID);
         return oPacket;
     }
@@ -100,7 +101,7 @@ public class Login {
     }
 
     public static OutPacket ApplyHotFix() {
-        OutPacket oPacket = new OutPacket(LoopBackPacket.ApplyHotFix);
+        OutPacket oPacket = new OutPacket(LoopBackPacket.ApplyHotfix);
         oPacket.EncodeBool(true);
         return oPacket;
     }
@@ -124,7 +125,7 @@ public class Login {
     }
 
     public static OutPacket CreateNewCharacterResult(AvatarData pAvatar, boolean bSuccess) {
-        OutPacket oPacket = new OutPacket(LoopBackPacket.CreateCharacterResult);
+        OutPacket oPacket = new OutPacket(LoopBackPacket.CreateNewCharacterResult);
         oPacket.EncodeBool(!bSuccess);
         if (bSuccess) {
             pAvatar.Encode(oPacket, false);
@@ -199,7 +200,7 @@ public class Login {
         oPacket.EncodeByte(0xFF).EncodeByte(0).EncodeByte(0).EncodeByte(0);
         pClient.SendPacket(oPacket);
         pClient.SendPacket(LastConnectedWorld(CenterSessionManager.aCenterSessions.get(0).nWorldID));
-        pClient.SendPacket((new OutPacket(LoopBackPacket.OnAliveReq)));
+        pClient.SendPacket((new OutPacket(LoopBackPacket.AliveReq)));
     }
 
     public static void OnSelectWorld(ClientSocket pSocket, InPacket iPacket) {

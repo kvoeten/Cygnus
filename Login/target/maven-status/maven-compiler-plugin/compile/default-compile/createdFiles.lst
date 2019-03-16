@@ -14,7 +14,6 @@ client\packet\Jobs.class
 client\Account.class
 server\CenterConnection$1.class
 client\avatar\AvatarLook.class
-.netbeans_automatic_build
 server\Server.class
 server\Configuration.class
 center\GameServer.class

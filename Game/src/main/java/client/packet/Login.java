@@ -16,6 +16,7 @@
  */
 package client.packet;
 
+import net.packet.LoopBackPacket;
 import center.CenterSessionManager;
 import center.packet.Center;
 import client.ClientSocket;

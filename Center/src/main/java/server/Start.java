@@ -16,6 +16,8 @@
  */
 package server;
 
+import auth.RankingWorker;
+
 /**
  * @author Kaz Voeten
  */
@@ -24,6 +26,7 @@ public class Start {
     public static void main(String[] args) {
         Server.GetInstance().start();
         LoginServerClient.getInstance().start();
+        RankingWorker.Schedule();
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override

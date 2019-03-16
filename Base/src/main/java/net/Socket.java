@@ -29,7 +29,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author Kaz Voeten
  */
-public class Socket extends Component {
+public class Socket {
 
     public static final AttributeKey<Socket> SESSION_KEY = AttributeKey.valueOf("Session");
     private final ReentrantLock Lock = new ReentrantLock(true);

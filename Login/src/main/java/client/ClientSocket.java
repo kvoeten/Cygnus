@@ -16,7 +16,7 @@
  */
 package client;
 
-import client.packet.ClientPacket;
+import net.packet.ClientPacket;
 import client.packet.Login;
 import io.netty.channel.Channel;
 import io.netty.util.concurrent.ScheduledFuture;
@@ -103,9 +103,7 @@ public class ClientSocket extends Socket {
                 break;
             default:
                 System.out.println("[DEBUG] Received unhandled Client packet. nPacketID: "
-                        + nPacketID + ". Name: "
-                        + ClientPacket.ClientPacketEnum.GetName(nPacketID)
-                        + ". Data: " + iPacket.toString());
+                        + nPacketID + ". Data: " + iPacket.toString());
                 break;
         }
     }

@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 
 import net.packet.InPacket;
 import net.packet.OutPacket;
-import template.item.ItemSlotIndex;
+import wz.item.ItemSlotIndex;
 
 /**
  * @author Kaz Voeten

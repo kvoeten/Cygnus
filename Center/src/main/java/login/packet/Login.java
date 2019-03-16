@@ -18,8 +18,8 @@ package login.packet;
 
 import database.Database;
 import game.GameServerSessionManager;
-import template.item.GW_ItemSlotEquip;
-import template.item.ItemSlotIndex;
+import wz.item.GW_ItemSlotEquip;
+import wz.item.ItemSlotIndex;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package client.packet;
+package net.packet;
 
 /**
  * @author Kaz Voeten
@@ -49,9 +49,11 @@ public class LoopBackPacket {
             CheckSPWExistResult = 32,// Version 188
             CheckWebLoginEmailID = 33,// Version 188
             CheckCrcResult = 34,// Version 188
+            CheckAliveAck = 37, //v188
             EncryptPacketID = 39,// Version 188 - TODO: CHECK!!
             ApplyHotfix = 40,// Version 188
             UserLimitResult = 43,// Version 188
+            JOB_ORDER = 45,
             SetCharacterCreation = 50,// Version 188
             NMCOResult = 52,// Version 188
             MapLogin = 55,// Version 188

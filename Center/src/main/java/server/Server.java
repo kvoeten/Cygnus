@@ -31,7 +31,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 import net.PacketDecoder;
 import net.PacketEncoder;
-import template.MapleDataFactory;
+import wz.MapleDataFactory;
 
 /**
  * @author Kaz Voeten

@@ -14,7 +14,6 @@ login\packet\LoginPacket.class
 game\packet\GamePacket.class
 server\Start$1.class
 server\Start.class
-.netbeans_automatic_build
 server\Server.class
 user\UserStorage.class
 login\packet\Login.class

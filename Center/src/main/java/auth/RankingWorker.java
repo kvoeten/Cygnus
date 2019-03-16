@@ -23,6 +23,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,21 +36,19 @@ import user.character.AvatarData;
  */
 public class RankingWorker extends Thread {
 
+    public static void Schedule() {
+        ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+        ses.scheduleAtFixedRate(new RankingWorker(), 12, 12, TimeUnit.HOURS);
+    }
+
     @Override
     public void run() {
-        try {
-            Thread.sleep(1000);
-            ProcessRanking();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(RankingWorker.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ProcessRanking();
     }
 
     public static void ProcessRanking() {
-        try (Connection con = Database.GetConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT dwCharacterID, nJob, nExp64, nLevel, nPop FROM gw_characterstat")) {
-
-            try (ResultSet rs = ps.executeQuery()) {
+        try ( Connection con = Database.GetConnection();  PreparedStatement ps = con.prepareStatement("SELECT dwCharacterID, nJob, nExp64, nLevel, nPop FROM gw_characterstat ORDER BY nExp64 DESC")) {
+            try ( ResultSet rs = ps.executeQuery()) {
                 int nRank = 0;
                 HashMap<Integer, Integer> mJobRank = new HashMap<>();
                 while (rs.next()) {
@@ -66,15 +67,13 @@ public class RankingWorker extends Thread {
                     }
                 }
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(RankingWorker.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     private static boolean IsEligibleForRanking(Connection con, int dwCharacterID) throws SQLException {
-        try (PreparedStatement ps = con.prepareStatement("SELECT nOverAllRank FROM avatardata WHERE dwCharacterID = " + dwCharacterID);
-             ResultSet rs = ps.executeQuery()) {
+        try ( PreparedStatement ps = con.prepareStatement("SELECT nOverAllRank FROM avatardata WHERE dwCharacterID = " + dwCharacterID);  ResultSet rs = ps.executeQuery()) {
             if (rs.next()) {
                 if (rs.getInt("nOverallRank") == -1) {
                     return false;
@@ -85,8 +84,7 @@ public class RankingWorker extends Thread {
     }
 
     private static void UpdateRanking(Connection con, int nNewRank, int nNewJobRank, int dwCharacterID) throws SQLException {
-        try (PreparedStatement ps = con.prepareStatement("SELECT nRank, nOverallRank FROM avatardata WHERE dwCharacterID = " + dwCharacterID);
-             ResultSet rs = ps.executeQuery()) {
+        try ( PreparedStatement ps = con.prepareStatement("SELECT nRank, nOverallRank FROM avatardata WHERE dwCharacterID = " + dwCharacterID);  ResultSet rs = ps.executeQuery()) {
             if (rs.next()) {
                 int nOverallRank = rs.getInt("nOverallRank");
                 int nOverallRankMove = nOverallRank - nNewRank;
@@ -94,7 +92,7 @@ public class RankingWorker extends Thread {
                 int nRank = rs.getInt("nRank");
                 int nRankMove = nRank - nNewJobRank;
 
-                try (PreparedStatement update = con.prepareStatement("UPDATE avatardata SET nRank = ?, nRankMove = ?, nOverallRank = ?, nOverallRankMove = ? WHERE dwCharacterID = ?")) {
+                try ( PreparedStatement update = con.prepareStatement("UPDATE avatardata SET nRank = ?, nRankMove = ?, nOverallRank = ?, nOverallRankMove = ? WHERE dwCharacterID = ?")) {
                     Database.Excecute(con, update, nRank, nRankMove, nOverallRank, nOverallRankMove, dwCharacterID);
                 }
             }
@@ -102,9 +100,7 @@ public class RankingWorker extends Thread {
     }
 
     public static void SendWorldCharacterInfo() {
-        try (Connection con = Database.GetConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT * FROM avatardata");
-             ResultSet rs = ps.executeQuery()) {
+        try ( Connection con = Database.GetConnection();  PreparedStatement ps = con.prepareStatement("SELECT * FROM avatardata");  ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 AvatarData pAvatar = AvatarData.LoadAvatar(con, rs.getInt("dwCharacterID"));
                 // TODO: HTTP Put ranking to auth API
