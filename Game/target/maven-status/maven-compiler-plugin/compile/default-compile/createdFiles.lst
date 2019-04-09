@@ -7,8 +7,6 @@ client\ClientSocket.class
 client\ClientSessionManager.class
 center\CenterSessionManager.class
 center\packet\CenterPacket.class
-client\packet\ClientPacket.class
-client\packet\LoopBackPacket.class
 client\Account.class
 server\Client.class
 center\packet\LoopBackPacket.class

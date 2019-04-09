@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="launcher-win">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Cygnus Launcher</title>
+    <link rel="stylesheet" href="./css/settings.css">
+    <link rel="stylesheet" type="text/css" href="./css/settingpop.css">
+    <script src="./js/libs.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="windowTit">
+            <h1 translate="">Cygnus Launcher</h1></header>
+        <aside class="tools">
+            <button type="button" class="closeBt"><span>Close Window</span></button>
+        </aside>
+        <section class="contents" id="contents">
+            <section class="settingSec">
+                <ul class="nav">
+                    <a href="https://nxl.nxfs.nexon.com/build/frontend/fa4fdbd534bc861ffff9a5442183fb2330f85b97/app/settings/index.html#" ui-sref="general" ui-sref-active="on">
+                        <li translate="">News</li>
+                    </a>
+                    <a href="https://nxl.nxfs.nexon.com/build/frontend/fa4fdbd534bc861ffff9a5442183fb2330f85b97/app/settings/index.html#" ui-sref="install" ui-sref-active="on">
+                        <li translate="">Game Install / Update</li>
+                    </a>
+                    <a href="https://nxl.nxfs.nexon.com/build/frontend/fa4fdbd534bc861ffff9a5442183fb2330f85b97/app/settings/index.html#" ng-class="{disabled: apps.length == 0}" ui-sref="configure" ui-sref-active="on">
+                        <li translate="">Game Configure</li>
+                    </a>
+                    <a href="https://nxl.nxfs.nexon.com/build/frontend/fa4fdbd534bc861ffff9a5442183fb2330f85b97/app/settings/index.html#" ui-sref="about" ui-sref-active="on">
+                        <li translate="">About</li>
+                    </a>
+                </ul>
+                <div class="container">
+                    <div ui-view=""></div>
+                    <div class="dimmed">
+                        <p translate="">Changes saved</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,6 +1,5 @@
 client\packet\Login.class
 client\packet\JobOrder$Categories.class
-client\packet\ClientPacket$ClientPacketEnum.class
 client\avatar\GW_CharacterStat.class
 server\Server$1.class
 server\CenterConnection.class
@@ -9,7 +8,6 @@ client\ClientSocket.class
 client\ClientSessionManager.class
 center\packet\CenterPacket.class
 client\avatar\ItemSlotIndex.class
-client\packet\ClientPacket.class
 client\packet\Jobs.class
 client\Account.class
 server\CenterConnection$1.class
@@ -21,7 +19,6 @@ center\CenterSocket.class
 server\Server$2.class
 center\CenterSessionManager.class
 client\packet\Login$Balloon.class
-client\packet\LoopBackPacket.class
 client\avatar\ZeroInfo.class
 client\avatar\AvatarData.class
 center\packet\LoopBackPacket.class
