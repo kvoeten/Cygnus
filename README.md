@@ -1,3 +1,3 @@
-![Image](http://api.kazvoeten.com/maple/cygnus%20banner.png)
+![Image](http://api.maplecygnus.com/image/Cygnus.png)
 ## Cygnus
-### An open source MapleStory emulator project.
+### An open source MapleStory emulator project that's still in it's infantile stages.
