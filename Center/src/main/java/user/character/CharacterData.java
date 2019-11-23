@@ -112,13 +112,11 @@ public class CharacterData {
             oPacket.EncodeInt(0);//if > 0 encode GW_ExpConsumeItem (int nItemID, int nMinLevel, int nMaxLevel, long nRemainExp64)
             oPacket.EncodeInt(0);//Monsterbattle stuff?
 
-            oPacket.EncodeByte(aaItemSlot[0].length); //Equip
-            oPacket.EncodeByte(aaItemSlot[1].length); //Use
-            oPacket.EncodeByte(aaItemSlot[2].length); //Setup
-            oPacket.EncodeByte(aaItemSlot[3].length); //Etc
-            oPacket.EncodeByte(aaItemSlot[4].length); //Cash
+            for (int i = 0; i < aaItemSlot.length; ++i) {
+                oPacket.EncodeByte(aaItemSlot[i].length); // Inventory sizes (eq, use, setup, etc, cash)
+            }
 
-            (new FileTime(false)).Encode(oPacket); //Pendant slot aquired date
+            (new FileTime(false)).Encode(oPacket); //Pendant slot acquired date
 
             oPacket.EncodeByte(0); //
 
@@ -241,28 +239,28 @@ public class CharacterData {
             oPacket.EncodeShort(0);
 
             for (int i = 0; i < aaItemSlot[1].length; i++) { //Use inventory
-                oPacket.EncodeShort(i);
+                oPacket.EncodeByte(i);
                 aaItemSlot[1][i].RawEncode(oPacket);
             }
-            oPacket.EncodeShort(0x00);
+            oPacket.EncodeByte(0x00);
 
             for (int i = 0; i < aaItemSlot[2].length; i++) { //Setup inventory
-                oPacket.EncodeShort(i);
+                oPacket.EncodeByte(i);
                 aaItemSlot[2][i].RawEncode(oPacket);
             }
-            oPacket.EncodeShort(0x00);
+            oPacket.EncodeByte(0x00);
 
             for (int i = 0; i < aaItemSlot[3].length; i++) { //Etc inventory
-                oPacket.EncodeShort(i);
+                oPacket.EncodeByte(i);
                 aaItemSlot[3][i].RawEncode(oPacket);
             }
-            oPacket.EncodeShort(0x00);
+            oPacket.EncodeByte(0x00);
 
             for (int i = 0; i < aaItemSlot[4].length; i++) { //Cash inventory
-                oPacket.EncodeShort(i);
+                oPacket.EncodeByte(i);
                 aaItemSlot[4][i].RawEncode(oPacket);
             }
-            oPacket.EncodeShort(0x00);
+            oPacket.EncodeByte(0x00);
 
             oPacket.EncodeInt(0);
             oPacket.EncodeInt(0);
@@ -498,8 +496,8 @@ public class CharacterData {
         }
 
         if ((dbCharFlag & 0x10000000) != 0) { // 
-            oPacket.EncodeInt(0);
-            oPacket.EncodeInt(0);
+            oPacket.EncodeInt(0); //sCharacterName[10] // seems wrong
+            oPacket.EncodeInt(0); // nSkin
         }
 
         if ((dbCharFlag & 0x2000) != 0) { // core aura
