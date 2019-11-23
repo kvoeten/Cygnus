@@ -16,5 +16,7 @@ C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\client\packet\Login.jav
 C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\center\GameServer.java
 C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\center\packet\CenterPacket.java
 C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\center\packet\LoopBackPacket.java
+C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\client\packet\LoopBackPacket.java
+C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\client\packet\ClientPacket.java
 C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\client\Account.java
 C:\Users\Kaz\Documents\GitHub\Cygnus\Login\src\main\java\client\avatar\ZeroInfo.java
